@@ -1,0 +1,15 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.testimoniales {
+  padding: var.$separacion;
+  &__heading {
+    text-align: center;
+  }
+
+  &__grid {
+    @include mix.desktop {
+      @include mix.grid(5, 2rem);
+    }
+  }
+}

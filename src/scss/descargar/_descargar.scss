@@ -1,0 +1,30 @@
+@use 'base/variables';
+@use 'base/mixins';
+
+.descargar {
+  background-color: variables.$grisClaro;
+  padding: variables.$separacion 0;
+  &__grid {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include mixins.desktop {
+      @include mixins.grid(2, variables.$separacion);
+    }
+  }
+
+  &__imagen {
+    width: 50%;
+    margin: 5rem auto 0 auto;
+    transition: transform 0.3s;
+
+    @include mixins.desktop {
+      margin-top: 0;
+    }
+
+    &:hover {
+      transform: rotate(4deg) scale(1.2);
+      cursor: pointer;
+    }
+  }
+}

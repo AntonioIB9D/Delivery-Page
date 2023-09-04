@@ -1,0 +1,17 @@
+@use 'base/variables';
+@use 'base/mixins';
+
+.favoritos {
+  background-color: variables.$grisClaro;
+  padding: variables.$separacion 0;
+  &__heading {
+    text-align: center;
+    color: variables.$secundario;
+  }
+
+  &__grid {
+    @include mixins.desktop {
+      @include mixins.grid(2, 4rem);
+    }
+  }
+}

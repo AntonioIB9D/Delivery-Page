@@ -1,0 +1,47 @@
+@use 'base/variables';
+@use 'base/mixins';
+
+.pasos {
+  margin-top: variables.$separacion;
+
+  &__wave {
+    margin-bottom: -1px;
+  }
+
+  &__heading {
+    color: variables.$blanco;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  &__heading--descripcion {
+    color: variables.$blanco;
+    display: block;
+    font-size: 2rem;
+  }
+
+  &__contenido {
+    background-color: variables.$primario;
+  }
+
+  &__grid {
+    @include mixins.desktop {
+      @include mixins.grid(3, variables.$separacion);
+    }
+  }
+
+  &__imagen {
+    transition: transform 0.3s;
+    @include mixins.tablet {
+      width: 60%;
+      margin: 0 auto;
+    }
+    @include mixins.desktop {
+      width: 100%;
+    }
+    &:hover {
+      transform: rotate(-4deg) scale(1.2);
+      cursor: pointer;
+    }
+  }
+}
